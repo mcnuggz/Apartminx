@@ -1,0 +1,122 @@
+﻿@model Apartment.Models.WhyApplied
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>WhyApplied</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.WasReferred)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WasReferred)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RentalAgency)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RentalAgency)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LocalAgency)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LocalAgency)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OtherPerson)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OtherPerson)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NoReferral)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NoReferral)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OnInternet)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OnInternet)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StoppedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StoppedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Newspaper)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Newspaper)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NewspaperName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NewspaperName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RentalPublication)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RentalPublication)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PublicaitonName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PublicaitonName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Other)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Other)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OtherDetails)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OtherDetails)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

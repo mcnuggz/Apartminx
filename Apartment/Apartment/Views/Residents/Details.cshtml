@@ -1,0 +1,63 @@
+﻿@model Apartment.Models.Resident
+
+@{
+    ViewBag.Title = "Details";
+}
+<br />
+<h2><em>Resident Details</em></h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HasPets)
+        </dt>
+
+        <dd>
+            @if (Model.HasPets == true)
+            {
+                <p>Yes</p>
+            }
+            else
+            {
+                <p>No</p>
+            }
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.petCount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.petCount)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("<< Back to List", "Index")
+</p>

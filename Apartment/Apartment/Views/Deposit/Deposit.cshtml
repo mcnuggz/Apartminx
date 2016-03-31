@@ -1,0 +1,74 @@
+﻿@{
+    ViewBag.Title = "Deposit";
+}
+@{ 
+    int secDeposit = 500;
+    int petDeposit = 150;
+}
+
+<legend class="legend">Security @ViewBag.Title</legend>
+<hr />
+<div class="panel">
+    <div class="panel-body">
+        <table class="table">
+            <tbody>
+                <tr>
+                    <td>
+                        <label>Security Deposit</label>
+                        <span><input id="checkBox" class="box" type="checkbox" value="@secDeposit" checked disabled/></span>
+                    </td>
+                    <td class="col-md-1"></td>
+                    <td>
+                        $@secDeposit
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Pet Deposit:</label>
+                        <span><input id="checkBox" class="box" type="checkbox" value="@petDeposit" /></span>
+                        <span class="petSpan"> <em>(check if applicable)&nbsp;</em></span>
+                    </td>
+                    <td class="col-md-1"></td>
+                    <td>$@petDeposit</td>
+                </tr>
+                <tr class="active">
+                    <td>Total:</td>
+                    <td class="col-md-1"></td>
+                    <td>$<span id="total"></span></td>
+                </tr>
+            </tbody>
+        </table>
+        <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top" class="col-md-offset-10">
+            <input type="hidden" name="cmd" value="_xclick">
+            <input type="hidden" name="business" value="dzanfox-facilitator@gmail.com">
+            <input type="hidden" name="lc" value="US">
+            <input type="hidden" name="item_name" value="Security/Pet Deposit">
+            <input type="hidden" name="amount" id="finalPaypal">
+            <input type="hidden" name="currency_code" value="USD">
+            <input type="hidden" name="button_subtype" value="services">
+            <input type="hidden" name="bn" value="PP-BuyNowBF:btn_paynow_SM.gif:NonHosted">
+            <input type="hidden" name="cbt" value="Return to DevCode Apartments" src="http://localhost:17455/Deposit/Complete" />
+            <input type="hidden" name="return" value="http://localhost:17455/Deposit/Complete" />
+            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynow_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+            <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+        </form>
+    </div>
+</div>
+@section Scripts{
+<script>
+    $(document).ready(function () {
+        var total = 0;
+        
+        $(".box").click(function(){
+            total = 0;
+            $(".box:checked").each(function(idx, elm){
+                total += parseInt(elm.value, 10);
+            });
+            $("#total").html(total);
+            $("#finalPaypal").val(total);
+        });
+        $("#total").html(@secDeposit);
+        $("#finalPaypal").val(@secDeposit);
+    });
+</script>
+    }

@@ -1,0 +1,90 @@
+﻿@model Apartment.Models.CriminalHistory
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CriminalHistory</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Evicted)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Evicted)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EarlyMoveOut)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EarlyMoveOut)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bankrupt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bankrupt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SuedForRent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SuedForRent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SuedForDamage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SuedForDamage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RegisteredSexOffender)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RegisteredSexOffender)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ArrestedForViolence)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ArrestedForViolence)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ArrestedForFelony)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ArrestedForFelony)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ArrestInformation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ArrestInformation)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

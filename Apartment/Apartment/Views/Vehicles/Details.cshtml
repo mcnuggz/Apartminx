@@ -1,0 +1,114 @@
+﻿@model Apartment.Models.Vehicles
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Vehicles</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.VehilceDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VehilceDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Year)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Year)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LicenseNum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LicenseNum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.State)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.State)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VehilceDescription2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VehilceDescription2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Year2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Year2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LicenseNum2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LicenseNum2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.State2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.State2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VehilceDescription3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VehilceDescription3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Year3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Year3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LicenseNum3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LicenseNum3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.State3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.State3)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

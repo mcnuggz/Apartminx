@@ -1,0 +1,55 @@
+﻿@{
+    ViewBag.Title = "Payment";
+}
+@{
+    decimal applicationFee = 100m;
+    decimal additionalFee = 40m;
+    decimal totalFees = applicationFee + additionalFee;
+}
+
+<legend class="legend">Application @ViewBag.Title</legend>
+<hr />
+<div class="panel">
+    <div class="panel-body">
+        <div class="alert alert-success">
+            <strong>Well done!</strong> <p>However, we now have to oblige to the application and other fees.</p>
+        </div>
+        <table class="table">
+            <tbody>
+                <tr>
+                    <td>
+                        Application Fee:
+                    </td>
+                    <td class="col-md-1"></td>
+                    <td>
+                        $@applicationFee
+                    </td>
+                </tr>
+                <tr class="spaceUnder">
+                    <td>Background/Credit Check Fees: </td>
+                    <td class="col-md-1"></td>
+                    <td>$@additionalFee</td>
+                </tr>
+                <tr class="active">
+                    <td>Total:</td>
+                    <td class="col-md-1"></td>
+                    <td>$@totalFees</td>
+                </tr>
+            </tbody>
+        </table>
+        <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <input type="hidden" name="cmd" value="_xclick">
+            <input type="hidden" name="business" value="dzanfox-facilitator@gmail.com">
+            <input type="hidden" name="lc" value="US">
+            <input type="hidden" name="item_name" value="Application Fee">
+            <input type="hidden" name="amount" value="@totalFees">
+            <input type="hidden" name="currency_code" value="USD">
+            <input type="hidden" name="button_subtype" value="services">
+            <input type="hidden" name="bn" value="PP-BuyNowBF:btn_paynow_SM.gif:NonHosted">
+            <input type="hidden" name="cbt" value="Return to DevCode Apartments" src="http://localhost:17455/Application/Complete" />
+            <input type="hidden" name="return" value="http://localhost:17455/Application/Complete" />
+            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynow_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+            <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+        </form>
+    </div>
+</div>

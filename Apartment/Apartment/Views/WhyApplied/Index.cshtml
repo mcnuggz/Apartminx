@@ -1,0 +1,105 @@
+﻿@model IEnumerable<Apartment.Models.WhyApplied>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.WasReferred)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RentalAgency)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LocalAgency)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OtherPerson)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NoReferral)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OnInternet)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StoppedBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Newspaper)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NewspaperName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RentalPublication)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PublicaitonName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Other)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OtherDetails)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.WasReferred)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RentalAgency)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LocalAgency)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OtherPerson)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NoReferral)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OnInternet)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StoppedBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Newspaper)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NewspaperName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RentalPublication)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PublicaitonName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Other)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OtherDetails)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

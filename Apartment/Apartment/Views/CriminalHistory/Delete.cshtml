@@ -1,0 +1,94 @@
+﻿@model Apartment.Models.CriminalHistory
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Evicted)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Evicted)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EarlyMoveOut)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EarlyMoveOut)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bankrupt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bankrupt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SuedForRent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SuedForRent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SuedForDamage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SuedForDamage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RegisteredSexOffender)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RegisteredSexOffender)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ArrestedForViolence)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ArrestedForViolence)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ArrestedForFelony)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ArrestedForFelony)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ArrestInformation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ArrestInformation)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

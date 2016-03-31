@@ -1,0 +1,2 @@
+    - If necessary, finish up on commenting system
+    - Begin working on the rating system and have it reflect the developer rating as well

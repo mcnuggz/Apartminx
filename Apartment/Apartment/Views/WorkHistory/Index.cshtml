@@ -1,0 +1,177 @@
+﻿@model IEnumerable<Apartment.Models.WorkHistory>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PresentlyEmployed)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Employer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.City)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.State)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ZipCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WorkPhone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Position)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GrossIncome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BeginDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SupervisorName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SupervisorNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PreviouslyEmployed)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PreviousEmployer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrevAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrevCity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrevState)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrevZip)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrevWorkPhone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrevPosition)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrevIncome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrevStartDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrevEndDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrevSupervisor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrevPhoneNumber)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PresentlyEmployed)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Employer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.City)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.State)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ZipCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WorkPhone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Position)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GrossIncome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BeginDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SupervisorName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SupervisorNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PreviouslyEmployed)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PreviousEmployer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrevAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrevCity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrevState)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrevZip)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrevWorkPhone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrevPosition)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrevIncome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrevStartDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrevEndDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrevSupervisor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrevPhoneNumber)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

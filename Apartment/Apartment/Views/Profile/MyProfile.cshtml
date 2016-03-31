@@ -1,0 +1,59 @@
+﻿@model Apartment.ViewModel.ResidentApartmentViewModel
+
+@{
+    ViewBag.Title = "Profile";
+}
+<legend class="legend">Your @ViewBag.Title</legend>
+<div class="passwordLink">
+    @Html.ActionLink("Manage Your Password", "Index", "Manage")
+</div>
+
+@if (!User.IsInRole("Landlord") && !User.IsInRole("Admin"))
+{
+    <div class="userSection">
+        <ul class="list-inline">
+            <li>
+                <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                    <input type="hidden" name="cmd" value="_xclick">
+                    <input type="hidden" name="business" value="dzanfox-facilitator@gmail.com">
+                    <input type="hidden" name="lc" value="US">
+                    <input type="hidden" name="item_name" value="Security/Pet Deposit">
+                    <input type="hidden" name="amount" id="finalPaypal">
+                    <input type="hidden" name="currency_code" value="USD">
+                    <input type="hidden" name="button_subtype" value="services">
+                    <input type="hidden" name="bn" value="PP-BuyNowBF:btn_paynow_SM.gif:NonHosted">
+                    <input type="hidden" name="cbt" value="Return to DevCode Apartments" src="http://localhost:17455/Deposit/Complete" />
+                    <input type="hidden" name="return" value="http://localhost:17455/Deposit/Complete" />
+                    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynow_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                    <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                </form>
+            </li>
+            <li><button onclick="location.href='@Url.Action("Contact", "Home")'" class="btn btn-info btn-lg">Contact Management</button></li>
+        </ul>
+    </div>
+}
+@if (User.IsInRole("Landlord") || User.IsInRole("Admin"))
+{
+    <div style="margin-bottom:50px;">
+
+        <ul class="list-inline">
+            <li><button onclick="location.href='@Url.Action("Index", "Residents")'" class="btn btn-info btn-lg">View Residents</button></li>
+            <li><button onclick="location.href='@Url.Action("Index", "Addresses")'" class="btn btn-info btn-lg">View Addresses</button></li>
+        </ul>
+        <hr />
+    </div>
+}
+@if (User.IsInRole("Admin"))
+{
+    <h2><em>Manage Buildings</em></h2>
+    <hr />
+    <div>
+        <ul class="list-inline">
+            <li><button onclick="location.href='@Url.Action("Create", "Cities")'" class="btn btn-primary btn-lg">Add Cities</button></li>
+            <li><button onclick="location.href='@Url.Action("Create", "PostalCodes")'" class="btn btn-primary btn-lg">Add Zip Codes</button></li>
+            <li><button onclick="location.href='@Url.Action("Create", "Sections")'" class="btn btn-primary btn-lg">Add Buildings</button></li>
+            <li><button onclick="location.href='@Url.Action("Create", "Streets")'" class="btn btn-primary btn-lg">Add Streets</button></li>
+            <li><button onclick="location.href='@Url.Action("Create", "UnitNumbers")'" class="btn btn-primary btn-lg">Add Units</button></li>
+        </ul>
+    </div>
+}

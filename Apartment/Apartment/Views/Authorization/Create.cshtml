@@ -1,0 +1,86 @@
+﻿@model Apartment.Models.Authorization
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<legend class="legend">Authorization</legend>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal miniBody_content">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="well well-lg">
+            <fieldset>
+                <div class="editor">
+                    @Html.LabelFor(model => model.Email)
+                    @Html.TextBoxFor(model => model.Email)
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                </div>
+            </fieldset>
+            <fieldset>
+                <div class="editor">
+                    @Html.LabelFor(model => model.Phone)
+                    @Html.TextBoxFor(model => model.Phone)
+                    @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+                </div>
+            </fieldset>
+            <hr/>
+            <legend class="jumboLegend">Terms &amp; Conditions</legend>
+            <blockquote>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras feugiat sapien nisl, non euismod lectus aliquet ut. Suspendisse pulvinar vel lacus sit amet lacinia. Duis tincidunt consequat sem sit amet euismod. Curabitur efficitur, est nec euismod gravida, eros turpis egestas velit, eget mattis nisi dui eget nunc. Donec sodales eu est at commodo. Pellentesque volutpat mattis eros, scelerisque commodo lacus ornare eget. Mauris eu mi euismod, gravida neque id, gravida nisl. Vivamus malesuada sapien non elit dignissim consequat. Phasellus ut diam vitae enim eleifend suscipit. Curabitur vitae lorem tempus, dapibus lectus id, ultrices mauris. Suspendisse ut bibendum neque. Praesent tincidunt tellus cursus, maximus purus vitae, vestibulum urna. Mauris lorem mi, ultricies ac ornare non, cursus sit amet neque. Vivamus nec elit a nibh consectetur dignissim. Vestibulum tristique, urna et tincidunt fermentum, enim arcu posuere sapien, vel ultrices tellus nunc ut turpis.
+            </blockquote>
+            <fieldset>
+                <div class="editor">
+                    <div class="editorTerms">
+                        @Html.CheckBoxFor(model => model.AcceptTerms, new { style = "margin-left: 20px; line-height: 1em;" })
+                        <span>By Accepting Our Terms &amp; Conditions, you also agree to undergo a Background and Credit Check.</span>
+                        @Html.ValidationMessageFor(model => model.AcceptTerms, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </fieldset>
+            <hr />
+            <fieldset>
+                <div class="editor">
+                    @Html.LabelFor(model => model.ESignature)
+                    @Html.TextBoxFor(model => model.ESignature)
+                    @Html.ValidationMessageFor(model => model.ESignature, "", new { @class = "text-danger" })
+                </div>
+            </fieldset>
+            <hr/>
+            <p style="padding-bottom: 10px;">If you have any information about your spouse, please have them sign below:</p>
+            <div class="subFieldset">
+                <fieldset>
+                    <div class="editor">
+                        @Html.LabelFor(model => model.SpouseSignature)
+                        @Html.TextBoxFor(model => model.SpouseSignature)
+                        @Html.ValidationMessageFor(model => model.SpouseSignature, "", new { @class = "text-danger" })
+                    </div>
+                </fieldset>
+            </div>
+            <hr/>
+            <fieldset>
+                <div class="editor">
+                    @Html.LabelFor(model => model.AdditionalComments)
+                    @Html.TextAreaFor(model => model.AdditionalComments, 3, 28, new { style = "margin-left: 20px;"})
+                    @Html.ValidationMessageFor(model => model.AdditionalComments, "", new { @class = "text-danger" })
+                </div>
+            </fieldset>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-md-10">
+                <input type="submit" value="Continue" class="btn btn-primary btn-lg" />
+            </div>
+        </div>
+    </div>
+}
+@if (User.IsInRole("Admin") || User.IsInRole("Landlord"))
+{
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+}

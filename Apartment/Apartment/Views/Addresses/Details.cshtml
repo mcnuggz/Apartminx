@@ -1,0 +1,89 @@
+﻿@model Apartment.ViewModel.ResidentApartmentViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<legend class="legend">Address @ViewBag.Title</legend>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        
+        <dt>
+            @Html.DisplayNameFor(model => model.ApartmentAddress.FullAddress)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ApartmentAddress.FullAddress)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ApartmentAddress.CityId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ApartmentAddress.City.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ApartmentAddress.State)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApartmentAddress.State)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ApartmentAddress.PostalCodeId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApartmentAddress.PostalCode.Zip)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ApartmentAddress.RoomCountId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApartmentAddress.RoomCount.Count)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ApartmentAddress.BathCountId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApartmentAddress.BathCount.Count)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ApartmentAddress.RentCostId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApartmentAddress.RentCost.RentAmount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApartmentAddress.Availability)
+        </dt>
+
+        <dd>
+            @if (Model.ApartmentAddress.Availability == true)
+            {
+                <p>Yes</p>
+            }
+            else
+            {
+                <p>No</p>
+            }
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApartmentAddress.ResidentId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApartmentAddress.ResidentId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ApartmentAddress.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,81 @@
+﻿@model Apartment.Models.Case
+
+@{
+    ViewBag.Title = "Create";
+}
+<legend class="legend">@ViewBag.Title Tenant Case</legend>
+
+@using (Html.BeginForm("Create", "Cases", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal miniBody_content">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="well well-lg">
+            <fieldset>
+                <div class="editor">
+                    @Html.LabelFor(model => model.Name)
+                    @Html.TextBoxFor(model => model.Name)
+                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                </div>
+            </fieldset>
+            <fieldset>
+                <div class="editor">
+                    @Html.LabelFor(model => model.Email)
+                    @Html.TextBoxFor(model => model.Email)
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                </div>
+            </fieldset>
+            <fieldset>
+                <div class="editor">
+                    @Html.LabelFor(model => model.ApplicationFilled)
+                    @Html.CheckBoxFor(model => model.ApplicationFilled, new { style = "margin-left: 20px; width: auto; line-height: 1em;" })
+                    @Html.ValidationMessageFor(model => model.ApplicationFilled, "", new { @class = "text-danger" })
+                </div>
+            </fieldset>
+            <fieldset>
+                <div class="editor">
+                    @Html.LabelFor(model => model.BackgroundStatus)
+                    @Html.CheckBoxFor(model => model.BackgroundStatus, new { style = "margin-left: 20px; width: auto; line-height: 1em;" })
+                    @Html.ValidationMessageFor(model => model.BackgroundStatus, "", new { @class = "text-danger" })
+                </div>
+            </fieldset>
+            <fieldset>
+                <div class="editor">
+                    @Html.LabelFor(model => model.CreditReportStatus)
+                    @Html.CheckBoxFor(model => model.CreditReportStatus, new { style = "margin-left: 20px; width: auto; line-height: 1em;" })
+                    @Html.ValidationMessageFor(model => model.CreditReportStatus, "", new { @class = "text-danger" })
+                </div>
+            </fieldset>
+            <fieldset>
+                <div class="editor">
+                    @Html.LabelFor(model => model.LeaseSigned)
+                    @Html.CheckBoxFor(model => model.LeaseSigned, new { style = "margin-left: 20px; width: auto; line-height: 1em;" })
+                    @Html.ValidationMessageFor(model => model.LeaseSigned, "", new { @class = "text-danger" })
+                </div>
+            </fieldset>
+            <fieldset>
+                <div class="editorFile">
+                    @Html.LabelFor(model => model.LeasePath)
+                    <input type="file" name="file" />
+                    
+                </div>
+            </fieldset>
+            <fieldset>
+                <div class="editor">
+                    @Html.LabelFor(model => model.Status)
+                    @Html.EnumDropDownListFor(model => model.Status, new { style = "margin-left: 20px; width: auto; line-height: 1em;" })
+                    @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
+                </div>
+            </fieldset>
+        </div>
+        <br />
+        <fieldset>
+            <input type="submit" value="Create" class="btn btn-success btn-lg" />
+            <input type="reset" value="Clear" class="btn btn-warning btn-lg" />
+        </fieldset>
+    </div>
+}
+<div>
+    <a href="@Url.Action("Index", "Cases")"><input class="btn btn-primary btn-lg" style="margin-left: 15px;"value="<< Back to List" /></a>
+</div>
