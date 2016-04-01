@@ -24,6 +24,15 @@
     width: 275px;
     margin-left: 20px;
 }
+.creator label{
+    float: left;
+    width: 200px;
+    text-align:left;
+}
+.creator input[type=text]{
+    width: 250px;
+    margin-left: 20px;
+}
 .editorFile label{
     float: left;
     width: 350px;
@@ -151,5 +160,8 @@ textarea {
     font-size: 1.25em;
 }
 #indexContent p{
+    margin-left: 20px;
+}
+#passwordiv{
     margin-left: 20px;
 }
