@@ -257,11 +257,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Image\2bbp0wfm.jpg" />
-    <Content Include="Image\ak584912.jpg" />
-    <Content Include="Image\b6kevcz8.jpg" />
-    <Content Include="Image\c9pd7zcx.jpg" />
-    <Content Include="Image\placeholder1.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-2.2.2.intellisense.js" />
@@ -400,6 +395,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Image\" />
     <Folder Include="Leases\" />
   </ItemGroup>
   <ItemGroup>
