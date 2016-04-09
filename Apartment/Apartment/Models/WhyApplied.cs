@@ -22,9 +22,11 @@ namespace Apartment.Models
         public bool StoppedBy { get; set; }
         [Display(Name ="Did you find our ad in the newspaper?")]
         public bool Newspaper { get; set; }
+        [Display(Name ="Newspaper Name:")]
         public string NewspaperName { get; set; }
         [Display(Name ="Did you find us in a rental publication?")]
         public bool RentalPublication { get; set; }
+        [Display(Name ="Publication Name:")]
         public string PublicaitonName { get; set; }
         [Display(Name ="If none of the above, how did you find us?")]
         public string OtherDetails { get; set; }

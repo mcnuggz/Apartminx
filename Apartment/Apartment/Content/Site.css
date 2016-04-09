@@ -13,7 +13,6 @@
 }
 .dl-horizontal dt {
     white-space: initial;
-
 }
 .editor label{
     float: left;
@@ -22,6 +21,7 @@
 }
 .editor input[type=text]{
     width: 275px;
+    line-height: 2em;
     margin-left: 20px;
 }
 .creator label{
@@ -31,6 +31,7 @@
 }
 .creator input[type=text]{
     width: 250px;
+    line-height: 2em;
     margin-left: 20px;
 }
 .editorFile label{
@@ -50,7 +51,6 @@ fieldset{
 .subFieldset input[type='text']{
     margin-left: 0;
 }
-
 .editorTerms label{
     float: right;
     width: auto;
@@ -116,6 +116,14 @@ textarea {
     width: 290px;
     line-height: 2em;
 }
+.emergency label{
+    float: left;
+    width: 180px;
+}
+.emergency input[type=text]{
+    width: 290px;
+    line-height: 2em;
+}
 .petSpan{
     font-size: 14px;
 }
@@ -164,4 +172,10 @@ textarea {
 }
 #passwordiv{
     margin-left: 20px;
+}
+#subHeader{
+    font-size: 24px;
+    margin-left: 20px;
+    font-style: italic;
+    padding-bottom: 5px;
 }

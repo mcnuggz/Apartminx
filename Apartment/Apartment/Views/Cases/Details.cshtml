@@ -7,8 +7,6 @@
 <legend class="legend">@ViewBag.Title</legend>
 
 <div>
-    <h4>Case</h4>
-    <hr />
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.Name)
@@ -50,13 +48,28 @@
             @Html.DisplayFor(model => model.CreditReportStatus)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.LeaseSigned)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.LeaseSigned)
-        </dd>
+        @if (Model.LeasePath == null)
+        {
+            <dt>
+                @Html.DisplayNameFor(model => model.LeaseSigned)
+            </dt>
+            <dd>
+                @if (Model.LeaseSigned == false)
+                {
+                    <p>No</p>
+                }
+            </dd>
+        }
+        else
+        {
+            <dt>
+                @Html.DisplayNameFor(model => model.LeasePath)
+            </dt>
+            <dd>
+                <p><a href="@Model.LeasePath" download>Lease</a></p>
+            </dd>
+        }
 
         <dt>
             @Html.DisplayNameFor(model => model.Status)

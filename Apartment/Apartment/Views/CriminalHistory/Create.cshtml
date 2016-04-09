@@ -13,93 +13,51 @@
     <div class="form-horizontal">
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="well well-lg">
-            <div class="form-group">
-                @Html.LabelFor(model => model.Evicted, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    <div class="checkbox">
-                        @Html.EditorFor(model => model.Evicted)
-                        @Html.ValidationMessageFor(model => model.Evicted, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.EarlyMoveOut, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    <div class="checkbox">
-                        @Html.EditorFor(model => model.EarlyMoveOut)
-                        @Html.ValidationMessageFor(model => model.EarlyMoveOut, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.Bankrupt, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    <div class="checkbox">
-                        @Html.EditorFor(model => model.Bankrupt)
-                        @Html.ValidationMessageFor(model => model.Bankrupt, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.SuedForRent, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    <div class="checkbox">
-                        @Html.EditorFor(model => model.SuedForRent)
-                        @Html.ValidationMessageFor(model => model.SuedForRent, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.SuedForDamage, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    <div class="checkbox">
-                        @Html.EditorFor(model => model.SuedForDamage)
-                        @Html.ValidationMessageFor(model => model.SuedForDamage, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.RegisteredSexOffender, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    <div class="checkbox">
-                        @Html.EditorFor(model => model.RegisteredSexOffender)
-                        @Html.ValidationMessageFor(model => model.RegisteredSexOffender, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.ArrestedForViolence, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    <div class="checkbox">
-                        @Html.EditorFor(model => model.ArrestedForViolence)
-                        @Html.ValidationMessageFor(model => model.ArrestedForViolence, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.ArrestedForFelony, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    <div class="checkbox">
-                        @Html.EditorFor(model => model.ArrestedForFelony)
-                        @Html.ValidationMessageFor(model => model.ArrestedForFelony, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.ArrestInformation, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.TextAreaFor(model => model.ArrestInformation, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.ArrestInformation, "", new { @class = "text-danger" })
-                </div>
-            </div>
+            <fieldset class="editor">
+                @Html.LabelFor(model => model.Evicted)
+                @Html.CheckBoxFor(model => model.Evicted, new { style = "margin-left: 20px;" })
+                @Html.ValidationMessageFor(model => model.Evicted, "", new { @class = "text-danger" })
+            </fieldset>
+            <fieldset class="editor">
+                @Html.LabelFor(model => model.EarlyMoveOut)
+                @Html.CheckBoxFor(model => model.EarlyMoveOut, new { style = "margin-left: 20px;" })
+                @Html.ValidationMessageFor(model => model.EarlyMoveOut, "", new { @class = "text-danger" })
+            </fieldset>
+            <fieldset class="editor">
+                @Html.LabelFor(model => model.Bankrupt)
+                @Html.CheckBoxFor(model => model.Bankrupt, new { style = "margin-left: 20px;" })
+                @Html.ValidationMessageFor(model => model.Bankrupt, "", new { @class = "text-danger" })
+            </fieldset>
+            <fieldset class="editor">
+                @Html.LabelFor(model => model.SuedForRent)
+                @Html.CheckBoxFor(model => model.SuedForRent, new { style = "margin-left: 20px;" })
+                @Html.ValidationMessageFor(model => model.SuedForRent, "", new { @class = "text-danger" })
+            </fieldset>
+            <fieldset class="editor">
+                @Html.LabelFor(model => model.SuedForDamage)
+                @Html.CheckBoxFor(model => model.SuedForDamage, new { style = "margin-left: 20px;" })
+                @Html.ValidationMessageFor(model => model.SuedForDamage, "", new { @class = "text-danger" })
+            </fieldset>
+            <fieldset class="editor">
+                @Html.LabelFor(model => model.RegisteredSexOffender)
+                @Html.CheckBoxFor(model => model.RegisteredSexOffender, new { style = "margin-left: 20px;" })
+                @Html.ValidationMessageFor(model => model.RegisteredSexOffender, "", new { @class = "text-danger" })
+            </fieldset>
+            <fieldset class="editor">
+                @Html.LabelFor(model => model.ArrestedForViolence)
+                @Html.CheckBoxFor(model => model.ArrestedForViolence, new { style = "margin-left: 20px;" })
+                @Html.ValidationMessageFor(model => model.ArrestedForViolence, "", new { @class = "text-danger" })
+            </fieldset>
+            <fieldset class="editor">
+                @Html.LabelFor(model => model.ArrestedForFelony)
+                @Html.CheckBoxFor(model => model.ArrestedForFelony, new { style = "margin-left: 20px;" })
+                @Html.ValidationMessageFor(model => model.ArrestedForFelony, "", new { @class = "text-danger" })
+            </fieldset>
+            <fieldset class="editor">
+                @Html.LabelFor(model => model.ArrestInformation)
+                @Html.TextAreaFor(model => model.ArrestInformation, 3, 28, new { style = "margin-left: 20px;" })
+                @Html.ValidationMessageFor(model => model.ArrestInformation, "", new { @class = "text-danger" })
+            </fieldset>
         </div>
 
         <div class="form-group">

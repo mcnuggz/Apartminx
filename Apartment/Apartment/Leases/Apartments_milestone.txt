@@ -1,17 +1,15 @@
-Friday
-    Implement Paypal
-    Begin administrator page where they can create new apartment buildings, change their availability
-
-Weekend
-    Catch up for lost time, style and polish for mvp state. 
-
 Monday
-    Create survey to be uploaded for customers may 
+    Create survey to be uploaded for customers 
     Update management page to display survey results
-
-Tuesday
-    Update management page to check rent status and communitate with tenants
 
 Wednesday
     Implement HTTPS
     
+
+Optional: survey link on tenant page
+Optional: HTTPS
+
+Unique link that carries over Case Information
+	CaseId => Applicant
+		Automated Status Changes
+

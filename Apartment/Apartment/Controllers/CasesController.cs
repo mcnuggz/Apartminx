@@ -66,8 +66,6 @@ namespace Apartment.Controllers
 
                 db.Cases.Add(@case);
                 db.SaveChanges();
-                //pass caseID to thankyoumessage link
-               
                 Mailer.SendLink("Thank you for visiting!", @case.Email, thankyouMessage);
                 return RedirectToAction("Index");
             }

@@ -13,45 +13,31 @@
     <div class="form-horizontal">
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="well well-lg">
-            <div class="form-group">
-                @Html.LabelFor(model => model.BankName, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.BankName, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.BankName, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.City, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.City, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.City, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.State, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EnumDropDownListFor(model => model.State, htmlAttributes: new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.State, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.SocialSecurity, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.SocialSecurity, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.SocialSecurity, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.OtherComments, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.TextAreaFor(model => model.OtherComments, new { htmlAttributes = new { @class = "form-control" } })
+            <fieldset class="editor">
+                @Html.LabelFor(m => m.BankName)
+                @Html.TextBoxFor(m => m.BankName)
+                @Html.ValidationMessageFor(model => model.BankName, "", new { @class = "text-danger" })
+            </fieldset>
+            <fieldset class="editor">
+                @Html.LabelFor(m => m.City)
+                @Html.TextBoxFor(m => m.City)
+                @Html.ValidationMessageFor(model => model.City, "", new { @class = "text-danger" })
+            </fieldset>
+            <fieldset class="editor">
+                @Html.LabelFor(model => model.State)
+                @Html.EnumDropDownListFor(model => model.State, new { style = "margin-left: 20px;" })
+                @Html.ValidationMessageFor(model => model.State, "", new { @class = "text-danger" })
+            </fieldset>                
+            <fieldset class="editor">
+                @Html.LabelFor(m => m.SocialSecurity)
+                @Html.TextBoxFor(m => m.SocialSecurity)
+                @Html.ValidationMessageFor(model => model.SocialSecurity, "", new { @class = "text-danger" })
+            </fieldset>
+            <fieldset class="editor">
+                    @Html.LabelFor(model => model.OtherComments)
+                    @Html.TextAreaFor(model => model.OtherComments, 3, 28, new { style = "margin-left: 20px;" })
                     @Html.ValidationMessageFor(model => model.OtherComments, "", new { @class = "text-danger" })
-                </div>
-            </div>
+            </fieldset>
         </div>
 
         <div class="form-group">

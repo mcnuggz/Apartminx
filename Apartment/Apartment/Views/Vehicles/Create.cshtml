@@ -3,117 +3,84 @@
 @{
     ViewBag.Title = "Create";
 }
-<br />
-<h2><em>Vehicles</em></h2>
+<legend class="legend">Vehicles</legend>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
-    <div class="form-horizontal" id="vehicleForm">
-        <hr />
+    <div class="form-horizontal">
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <h3><em>Vehicle #1</em></h3>
+        <span id="subHeader">Vehicle #1</span>
         <div class="well well-lg">
-            <div class="form-group">
-                @Html.LabelFor(model => model.VehilceDescription, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.VehilceDescription, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.VehilceDescription, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.Year, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Year, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Year, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.LicenseNum, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.LicenseNum, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.LicenseNum, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.State, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EnumDropDownListFor(model => model.State, htmlAttributes: new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.State, "", new { @class = "text-danger" })
-                </div>
-            </div>
+            <fieldset class="editor">
+                @Html.LabelFor(model => model.VehilceDescription)
+                @Html.TextBoxFor(model => model.VehilceDescription)
+                @Html.ValidationMessageFor(model => model.VehilceDescription, "", new { @class = "text-danger" })
+            </fieldset>
+            <fieldset class="editor">
+                @Html.LabelFor(model => model.Year)
+                @Html.TextBoxFor(model => model.Year, new { style = "width: 75px;" })
+                @Html.ValidationMessageFor(model => model.Year, "", new { @class = "text-danger" })
+            </fieldset>
+            <fieldset class="editor">
+                @Html.LabelFor(model => model.LicenseNum)
+                @Html.TextBoxFor(model => model.LicenseNum)
+                @Html.ValidationMessageFor(model => model.LicenseNum, "", new { @class = "text-danger" })
+            </fieldset>
+            <fieldset class="editor">
+                @Html.LabelFor(model => model.State)
+                @Html.EnumDropDownListFor(model => model.State, new { style = "margin-left: 20px; width: auto; line-height: 1em;" })
+                @Html.ValidationMessageFor(model => model.State, "", new { @class = "text-danger" })
+            </fieldset>
         </div>
-        <h3><em>Vehicle #2</em></h3>
+
+        <span id="subHeader">Vehicle #2</span>
         <div class="well well-lg">
-            <div class="form-group">
-                @Html.LabelFor(model => model.VehilceDescription2, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.VehilceDescription2, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.VehilceDescription2, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.Year2, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Year2, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Year2, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.LicenseNum2, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.LicenseNum2, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.LicenseNum2, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.State2, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EnumDropDownListFor(model => model.State2, htmlAttributes: new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.State2, "", new { @class = "text-danger" })
-                </div>
-            </div>
+            <fieldset class="editor">
+                @Html.LabelFor(model => model.VehilceDescription2)
+                @Html.TextBoxFor(model => model.VehilceDescription2)
+                @Html.ValidationMessageFor(model => model.VehilceDescription2, "", new { @class = "text-danger" })
+            </fieldset>
+            <fieldset class="editor">
+                @Html.LabelFor(model => model.Year2)
+                @Html.TextBoxFor(model => model.Year2, new { style = "width: 75px;" })
+                @Html.ValidationMessageFor(model => model.Year2, "", new { @class = "text-danger" })
+            </fieldset>
+            <fieldset class="editor">
+                @Html.LabelFor(model => model.LicenseNum2)
+                @Html.TextBoxFor(model => model.LicenseNum2)
+                @Html.ValidationMessageFor(model => model.LicenseNum2, "", new { @class = "text-danger" })
+            </fieldset>
+            <fieldset class="editor">
+                @Html.LabelFor(model => model.State2)
+                @Html.EnumDropDownListFor(model => model.State2, new { style = "margin-left: 20px;" })
+                @Html.ValidationMessageFor(model => model.State2, "", new { @class = "text-danger" })
+            </fieldset>
         </div>
-        <h3><em>Vehicle #3</em></h3>
+
+        <span id="subHeader">Vehicle #3</span>
         <div class="well well-lg">
-            <div class="form-group">
-                @Html.LabelFor(model => model.VehilceDescription3, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.VehilceDescription3, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.VehilceDescription3, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.Year3, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Year3, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Year3, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.LicenseNum3, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.LicenseNum3, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.LicenseNum3, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.State3, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EnumDropDownListFor(model => model.State3, htmlAttributes: new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.State3, "", new { @class = "text-danger" })
-                </div>
-            </div>
+            <fieldset class="editor">
+                @Html.LabelFor(model => model.VehilceDescription3)
+                @Html.TextBoxFor(model => model.VehilceDescription3)
+                @Html.ValidationMessageFor(model => model.VehilceDescription3, "", new { @class = "text-danger" })
+            </fieldset>
+            <fieldset class="editor">
+                @Html.LabelFor(model => model.Year3)
+                @Html.TextBoxFor(model => model.Year3, new { style = "width: 75px;" })
+                @Html.ValidationMessageFor(model => model.Year3, "", new { @class = "text-danger" })
+            </fieldset>
+            <fieldset class="editor">
+                @Html.LabelFor(model => model.LicenseNum3)
+                @Html.TextBoxFor(model => model.LicenseNum3)
+                @Html.ValidationMessageFor(model => model.LicenseNum3, "", new { @class = "text-danger" })
+            </fieldset>
+            <fieldset class="editor">
+                @Html.LabelFor(model => model.State3)
+                @Html.EnumDropDownListFor(model => model.State3, new { style = "margin-left: 20px;" })
+                @Html.ValidationMessageFor(model => model.State3, "", new { @class = "text-danger" })
+            </fieldset>
         </div>
 
         <div class="form-group">

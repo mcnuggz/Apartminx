@@ -154,7 +154,7 @@
                 <fieldset>
                     <div class="editor">
                         @Html.LabelFor(model => model.PetDescription)
-                        @Html.TextAreaFor(model => model.PetDescription, 3, 30, null)
+                        @Html.TextAreaFor(model => model.PetDescription, 3, 28, null)
                         @Html.ValidationMessageFor(model => model.PetDescription, "", new { @class = "text-danger" })
                     </div>
                 </fieldset>
@@ -239,7 +239,7 @@
                 <fieldset>
                     <div class="editor">
                         @Html.LabelFor(model => model.MoveOutReason)
-                        @Html.TextAreaFor(model => model.MoveOutReason)
+                        @Html.TextAreaFor(model => model.MoveOutReason, 3, 28, null)
                         @Html.ValidationMessageFor(model => model.MoveOutReason, "", new { @class = "text-danger" })
                     </div>
                 </fieldset>
